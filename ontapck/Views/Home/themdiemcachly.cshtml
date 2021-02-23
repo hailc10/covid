@@ -1,0 +1,28 @@
+﻿@using ontapck.Models;
+@model diemcachly
+
+@{
+    ViewData["Title"] = "Thêm Điểm Cách Ly";
+}
+
+<h1>Thêm Điểm Cách Ly</h1>
+<table class="table table-bordered table-sm" >
+    <form action="/Home/InsertDCL" method="post">
+        <tr>
+            <td>Mã điểm cách ly</td>
+            <td><input type="text" id="maDiemCachLy" name="MaDiemCachLy" /></td>
+        </tr>
+        <tr>
+            <td>Tên điểm cách ly</td>
+            <td><input type="text" id="tenDiemCachLy" name="TenDiemCachLy" /></td>
+        </tr>
+        <tr>
+            <td>Địa chỉ</td>
+            <td><input type="text" id="diaChi" name="DiaChi" /></td>
+        </tr>
+        <tr>
+           
+            <td colspan="2"><input type="submit" class="btn btn-info" value="Thêm" /></td>
+        </tr>
+    </form>
+</table>

@@ -1,0 +1,35 @@
+﻿
+@{
+    ViewData["Title"] = "ViewCongNhan";
+}
+
+@model congnhan
+@{
+
+
+    <h2>Update công nhân</h2>
+    
+    <form action="/Home/UpdateCongNhan" method="post">
+        <div class="form-group">
+            <label for="MaCongNhan">Mã Công Nhân</label><input type="text"  name="MaCongNhan" value="@Model.MaCongNhan"  />
+        </div>
+        <div class="form-group">
+            <label for="TenCongNhan">Tên Công Nhân</label><input type="text"  name="TenCongNhan" value="@Model.TenCongNhan" />
+        </div>
+          <div class="form-check">
+        <label asp-for="@Model.GioiTinh">Giới tính</label><input type="checkbox" id="gioitinh" asp-for="@Model.GioiTinh" name="GioiTinh" value="@Model.GioiTinh" /> (Đánh dấu là Nam)
+    </div>
+    <div class="form-group">
+        <label for="namsinh">Năm Sinh</label>  <input type="text" id="namsinh" name="NamSinh" value="@Model.NamSinh" />
+    </div>
+    <div class="form-group">
+        <label for="nuocve">Nước về</label>  <input type="text" id="nuocve" name="NuocVe" value="@Model.NuocVe" />
+    </div>
+        <div class="form-group">
+            <input type="submit" name="submit" value="Update" />
+        </div>
+    </form>
+
+
+}
+

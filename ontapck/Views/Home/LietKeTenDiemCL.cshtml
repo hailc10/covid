@@ -1,0 +1,43 @@
+﻿
+@{
+    ViewData["Title"] = "Các điểm cách ly";
+}
+
+
+@model ontapck.Models.MixCNDCL
+
+<h1>Danh sách điểm cách ly</h1>
+<form action="/Home/LietKeTenDiemCL" method="post">
+    <label>Tên điểm cách ly</label> <select name="MaDiemCachLy">
+
+    @foreach (var rs in Model.listdiemcl)
+    {
+        // This works correctly
+       <option value="@rs.MaDiemCachLy">
+           @rs.TenDiemCachLy
+       </option>
+        // display other properties
+    }
+</select><br />
+    <input type="submit" value="Liệt Kê" />
+</form>
+
+<div style="margin-top:50px;">
+    <table class="table table-bordered table-sm">
+        <tr>
+            <th>Mã Công Nhân</th>
+            <th>Tên Công Nhân</th>
+            <th>Chức Năng</th>
+        </tr>
+        @foreach (var cn in Model.listcongnhan)
+        {
+         <tr>
+            <td>@cn.MaCongNhan</td>
+            <td>@cn.TenCongNhan</td>
+            <td><a href="/Home/XoaCongNhan?Id=@cn.MaCongNhan">Xóa</a> / 
+                <a href="/Home/ViewCongNhan?Id=@cn.MaCongNhan">Xem</a></td>
+         </tr>
+        }
+    </table>
+</div>
+

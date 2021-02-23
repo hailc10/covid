@@ -1,0 +1,48 @@
+﻿
+@{
+    ViewData["Title"] = "Danh sách triệu chứng";
+}
+
+@model IEnumerable<ontapck.Models.cntheotrieuchung>
+    <h1>Liệt Kê Triệu Chứng</h1>
+    <form action="/Home/ViewTrieuChung" method="post">
+        <label>Số triệu chứng</label>
+        <input type="number" value="0" min="0" max="40" step="1" name="SoTrieuChung" /><br />
+        <input type="submit" value="Liệt Kê" />
+    </form>
+
+<h1>Danh sách triệu chứng</h1>
+
+<table class="table table-bordered table-sm">
+    <tr>
+        <th>Tên công nhân</th>
+        <th>Năm sinh</th>
+        <th>Nước về</th>
+        <th>Số triệu chứng</th>
+        <th>Lựa chọn</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+<tr>
+    <td>
+        @item.TenCongNhan
+    </td>
+
+    <td>
+        @item.NamSinh
+    </td>
+    <td>
+        @item.NuocVe
+    </td>
+    <td>
+        @item.SoTrieuChung
+    </td>
+    <td>
+        <a href="DeleteKhoa?Id=@item.TenCongNhan">Xóa</a> /
+        <a href="ViewKhoa?Id=@item.TenCongNhan">View</a>
+    </td>
+
+</tr>
+    }
+</table>
+
